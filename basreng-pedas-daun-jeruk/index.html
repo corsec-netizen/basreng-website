@@ -28,7 +28,7 @@
 
 :root{
   --cabai:#D9221A; --cabai-tua:#A3120D; --api:#F26B1D; --kunyit:#FFC83D; --kunyit-muda:#FFE08A;
-  --daun:#2F8A3A; --daun-tua:#1F6528; --kecap:#4A2511; --krem:#FFF6E3; --putih:#FFFFFF;
+  --daun:#2A7D35; --daun-tua:#1F6528; --kecap:#4A2511; --krem:#FFF6E3; --putih:#FFFFFF;
   --wa:#157A3B; --wa-tua:#0E5A2B;
   --display:"Fredoka","Trebuchet MS",system-ui,sans-serif;
   --skrip:"Lobster","Brush Script MT",cursive;
@@ -106,13 +106,30 @@ p{margin:0 0 1em}
 .m-ambu{right:-12px;bottom:-22px;width:148px}
 .harga-bintang{position:absolute;z-index:4;left:0;top:-6px;width:104px;height:104px;background:var(--kunyit);color:var(--kecap);display:grid;place-items:center;text-align:center;transform:rotate(-12deg);
   clip-path:polygon(100.0% 50.0%,87.0% 58.5%,95.0% 71.7%,79.7% 73.7%,81.2% 89.1%,66.5% 84.2%,61.1% 98.7%,50.0% 88.0%,38.9% 98.7%,33.5% 84.2%,18.8% 89.1%,20.3% 73.7%,5.0% 71.7%,13.0% 58.5%,0.0% 50.0%,13.0% 41.5%,5.0% 28.3%,20.3% 26.3%,18.8% 10.9%,33.5% 15.8%,38.9% 1.3%,50.0% 12.0%,61.1% 1.3%,66.5% 15.8%,81.2% 10.9%,79.7% 26.3%,95.0% 28.3%,87.0% 41.5%)}
+/* bahan melayang di sekitar kemasan: daun jeruk, irisan cengek, irisan kencur */
+.bahan{position:absolute;z-index:2;pointer-events:none;filter:drop-shadow(2px 3px 0 rgba(74,37,17,.45))}
+.bahan svg{width:100%;height:auto;display:block;overflow:visible}
+.bahan.b-daun1{width:58px;left:30%;top:-14px;transform:rotate(-28deg)}
+.bahan.b-daun2{width:44px;right:3%;top:118px;transform:rotate(28deg) scaleX(-1)}
+.bahan.b-cabai1{width:42px;left:1%;top:118px;transform:rotate(18deg)}
+.bahan.b-cabai2{width:34px;right:4%;top:228px;transform:rotate(-20deg)}
+.bahan.b-kencur{width:42px;left:44%;bottom:-4px;transform:rotate(12deg)}
+@media (prefers-reduced-motion:no-preference){
+  .bahan svg{animation:melayang 3.6s cubic-bezier(.45,0,.55,1) infinite alternate}
+  .bahan.b-daun2 svg{animation-delay:-1.2s}.bahan.b-cabai1 svg{animation-delay:-2.1s}
+  .bahan.b-cabai2 svg{animation-delay:-.6s}.bahan.b-kencur svg{animation-delay:-2.8s}
+}
+@keyframes melayang{from{transform:translateY(0) rotate(0)}to{transform:translateY(-7px) rotate(6deg)}}
 .harga-bintang span{font:600 .8rem/1 var(--display);display:block}
 .harga-bintang strong{font:700 1.45rem/1 var(--display);display:block}
 
 .papan-harga{position:relative;z-index:2;background:#fff;color:var(--kecap);border:var(--garis);border-radius:20px;box-shadow:6px 6px 0 var(--kecap);padding:14px 14px 16px}
 .papan-harga .baris{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
 .papan-harga .baris{align-items:end}
-.papan-harga .uk{text-align:center;border-radius:14px;padding:8px 2px;background:var(--krem);border:2px dashed #E3C98F;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+/* label harga gaya gantungan toko */
+.papan-harga .uk{position:relative;text-align:center;border-radius:12px 12px 14px 14px;padding:16px 6px 8px;background:var(--kunyit-muda);border:2.5px solid var(--kecap);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;box-shadow:2px 3px 0 var(--kecap)}
+.papan-harga .uk::before{content:"";position:absolute;top:5px;left:50%;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:#fff;border:2px solid var(--kecap)}
+.papan-harga .u-50{transform:rotate(-3deg)}.papan-harga .u-250{transform:rotate(3deg)}
 .papan-harga .uk b{display:block;font:700 1.05rem var(--display)}
 .papan-harga .uk strong{font:700 1.2rem var(--display);color:var(--cabai)}
 .papan-harga .info{font-size:.88rem;text-align:center;margin:0 0 12px}
@@ -126,16 +143,22 @@ p{margin:0 0 1em}
 @keyframes jalan{to{transform:translateX(-50%)}}
 
 /* ---------- Menu rasa ---------- */
-.menu{padding:64px 0 60px;background:linear-gradient(var(--peach),var(--krem) 22%,var(--krem) 70%,#FFE9B8)}
+.menu{padding:64px 0 60px;background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%232F8A3A' stroke-opacity='.10' stroke-width='2'%3E%3Cpath d='M30 20c10 6 12 18 4 26-10-4-12-16-4-26zM34 46c7 5 8 14 2 20-7-3-8-12-2-20z'/%3E%3Cpath d='M92 70c10 6 12 18 4 26-10-4-12-16-4-26zM96 96c7 5 8 14 2 20-7-3-8-12-2-20z'/%3E%3C/g%3E%3C/svg%3E") 0 0/120px 120px,
+  linear-gradient(var(--peach),var(--krem) 22%,var(--krem) 70%,#FFE9B8)}
 .geser{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 16px 22px;margin:0 -16px;scrollbar-width:none}
 .geser::-webkit-scrollbar{display:none}
 .kartu-rasa{flex:0 0 82%;max-width:330px;scroll-snap-align:center;position:relative}
 .kartu-rasa input{position:absolute;opacity:0;pointer-events:none}
 .kartu-rasa label{display:block;height:100%;cursor:pointer;border:var(--garis);border-radius:26px;padding:18px 18px 20px;color:#fff;box-shadow:6px 6px 0 var(--kecap);position:relative;overflow:hidden;transition:transform .15s}
 .kartu-rasa label::before{content:"";position:absolute;inset:0;background:repeating-radial-gradient(circle at 85% 15%,rgba(255,255,255,.12) 0 6px,transparent 6px 18px);pointer-events:none}
-.k-kencur label{background:linear-gradient(160deg,#E8341E,#A3120D)}
-.k-pdj label{background:linear-gradient(160deg,#D9221A 0 55%,#2F8A3A 55%)}
-.k-ori label{background:linear-gradient(160deg,#3FA14A,#1F6528)}
+/* tiap rasa punya warna sendiri + piringan warna bahan di belakang karakter */
+.k-kencur label{background:linear-gradient(160deg,#C92E14,#9E1A0C);--aksen:#FFC83D}
+.k-pdj label{background:linear-gradient(160deg,#E0261C,#A3120D);--aksen:#4FB35A}
+.k-ori label{background:linear-gradient(160deg,#287A33,#1A5A23);--aksen:#FFE08A}
+.kartu-rasa .karakter::before{content:"";position:absolute;left:-6px;bottom:-8px;width:132px;height:132px;border-radius:50%;background:var(--aksen);border:2.5px solid var(--kecap);opacity:.95}
+.kartu-rasa .bahan-kartu{position:absolute;right:10px;bottom:6px;width:46px;transform:rotate(14deg);filter:drop-shadow(2px 2px 0 rgba(74,37,17,.45))}
+.kartu-rasa .bahan-kartu svg{width:100%;height:auto;display:block}
 .kartu-rasa .karakter{height:120px;position:relative;margin-bottom:6px}
 .kartu-rasa .karakter img{position:absolute;height:120px;width:auto;bottom:0}
 .kartu-rasa .karakter img:first-child{left:0}
@@ -329,7 +352,7 @@ footer p{margin:0 0 .35em}
 .artikel h2{font-size:clamp(1.4rem,5vw,1.9rem);margin:34px 0 10px}
 .artikel p,.artikel li{font-size:1.04rem}
 .artikel ul{padding-left:1.2em}
-.artikel a{color:var(--cabai-tua);font-weight:700}
+.artikel a:not(.btn){color:var(--cabai-tua);font-weight:700}
 .foto-artikel{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
 .foto-artikel img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 80%;border:3px solid var(--kecap);border-radius:16px;background:#fff}
 .cta-hal{background:#fff;border:var(--garis);border-radius:22px;box-shadow:5px 5px 0 var(--kecap);padding:20px;margin:34px 0;text-align:center}
