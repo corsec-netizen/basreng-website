@@ -28,9 +28,9 @@ Tiga rasa, masing-masing tersedia dalam bentuk stik dan chips:
 
 Harga sama untuk semua rasa dan bentuk:
 
-- 50 g: Rp7.000
-- 100 g: Rp14.000
-- 250 g: Rp30.000
+- 50 g: Rp7.500
+- 100 g: Rp15.000
+- 250 g: Rp32.500
 
 ## Cara pesan
 
