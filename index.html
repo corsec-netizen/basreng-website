@@ -157,6 +157,7 @@ p{margin:0 0 1em}
 .btn-wa{background:var(--wa);color:#fff}
 .btn-kuning{background:var(--kunyit);color:var(--kecap)}
 .btn-putih{background:#fff;color:var(--kecap)}
+.btn-shopee{background:#D73211;color:#fff}
 .btn svg{width:24px;height:24px;flex:none}
 .penuh{width:100%}
 
@@ -510,28 +511,28 @@ footer p{margin:0 0 .35em}
 <section class="menu" id="menu" aria-labelledby="judul-menu">
   <div class="wrap">
     <h2 class="judul-pop judul-sec" id="judul-menu" style="color:var(--cabai)">Pilih jagoanmu</h2>
-    <p class="sub-sec">Ada basreng pedas kencur, pedas daun jeruk, dan original daun jeruk. Ketuk satu rasa, atur ukuran dan jumlahnya, pesananmu langsung tertulis di WhatsApp.</p>
+    <p class="sub-sec">Ada basreng pedas daun jeruk, pedas kencur, dan original daun jeruk. Ketuk satu rasa, atur ukuran dan jumlahnya, pesananmu langsung tertulis di WhatsApp.</p>
 
     <div class="geser" id="geser" role="radiogroup" aria-label="Rasa">
-      <div class="kartu-rasa k-kencur">
-        <input type="radio" name="rasa" id="r-kencur" value="Pedas Kencur" checked>
-        <label for="r-kencur">
-          <div class="karakter"><img src="img/si-cikur.webp" decoding="async" loading="lazy" alt="" width="200" height="200"><img src="img/si-cengek.webp" decoding="async" loading="lazy" alt="" width="200" height="200"><span class="kata">Kerasa, teu?</span><span class="bahan-kartu" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#ik-kencur"/></svg></span></div>
-          <span class="label-pedas">pedas</span>
-          <h3><small>Basreng</small> Pedas Kencur</h3>
-          <p>Wangi kencurnya kerasa, basrengnya tipis dan kriuk.</p>
-          <div class="foto-kecil"><img src="img/stik-pedas.webp" decoding="async" loading="lazy" alt="Basreng stik pedas kencur Ibu Hj. Dian" width="420" height="649"><img src="img/chips-pedas.webp" decoding="async" loading="lazy" alt="Basreng chips pedas kencur Ibu Hj. Dian" width="420" height="649"></div>
-          <span class="tanda"><span class="pilih">Pilih rasa ini</span><span class="ok">✓ Dipilih</span></span>
-        </label>
-      </div>
       <div class="kartu-rasa k-pdj">
-        <input type="radio" name="rasa" id="r-pdj" value="Pedas Daun Jeruk">
+        <input type="radio" name="rasa" id="r-pdj" value="Pedas Daun Jeruk" checked>
         <label for="r-pdj">
           <div class="karakter"><img src="img/neng-daun.webp" decoding="async" loading="lazy" alt="" width="200" height="200"><img src="img/si-cengek.webp" decoding="async" loading="lazy" alt="" width="200" height="200"><span class="kata">Awas, ngamuk!</span><span class="bahan-kartu" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#ik-cabai"/></svg></span></div>
           <span class="label-pedas">pedas</span>
           <h3><small>Basreng</small> Pedas Daun Jeruk</h3>
           <p>Pedasnya nendang, wangi daun jeruknya bikin seger.</p>
           <div class="foto-kecil"><img src="img/stik-pedas.webp" decoding="async" loading="lazy" alt="" width="420" height="649"><img src="img/chips-pedas.webp" decoding="async" loading="lazy" alt="" width="420" height="649"></div>
+          <span class="tanda"><span class="pilih">Pilih rasa ini</span><span class="ok">✓ Dipilih</span></span>
+        </label>
+      </div>
+      <div class="kartu-rasa k-kencur">
+        <input type="radio" name="rasa" id="r-kencur" value="Pedas Kencur">
+        <label for="r-kencur">
+          <div class="karakter"><img src="img/si-cikur.webp" decoding="async" loading="lazy" alt="" width="200" height="200"><img src="img/si-cengek.webp" decoding="async" loading="lazy" alt="" width="200" height="200"><span class="kata">Kerasa, teu?</span><span class="bahan-kartu" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#ik-kencur"/></svg></span></div>
+          <span class="label-pedas">pedas</span>
+          <h3><small>Basreng</small> Pedas Kencur</h3>
+          <p>Wangi kencurnya kerasa, basrengnya tipis dan kriuk.</p>
+          <div class="foto-kecil"><img src="img/stik-pedas.webp" decoding="async" loading="lazy" alt="Basreng stik pedas kencur Ibu Hj. Dian" width="420" height="649"><img src="img/chips-pedas.webp" decoding="async" loading="lazy" alt="Basreng chips pedas kencur Ibu Hj. Dian" width="420" height="649"></div>
           <span class="tanda"><span class="pilih">Pilih rasa ini</span><span class="ok">✓ Dipilih</span></span>
         </label>
       </div>
@@ -551,7 +552,7 @@ footer p{margin:0 0 .35em}
 
     <div class="racik" id="racik">
       <h3>Racik pesananmu</h3>
-      <p class="dipilih">Rasa: <b id="rasa-dipilih">Pedas Kencur</b></p>
+      <p class="dipilih">Rasa: <b id="rasa-dipilih">Pedas Daun Jeruk</b></p>
 
       <div class="grup" id="lbl-ukuran">Ukuran <small>harga per bungkus</small></div>
       <div class="opsi" role="radiogroup" aria-labelledby="lbl-ukuran">
@@ -573,7 +574,7 @@ footer p{margin:0 0 .35em}
           <output id="qty" aria-live="polite">1</output>
           <button type="button" id="tambah" aria-label="Tambah jumlah">+</button>
         </div>
-        <div class="total-bintang"><small>Total</small><strong id="total">Rp15.000</strong></div>
+        <div class="total-bintang"><small>Total pesanan</small><strong id="total" aria-live="polite">Rp15.000</strong></div>
       </div>
 
       <ul class="keranjang" id="keranjang" aria-label="Pesanan yang sudah ditambahkan"></ul>
@@ -584,7 +585,9 @@ footer p{margin:0 0 .35em}
           Pesan via WhatsApp
         </a>
         <button type="button" class="btn btn-putih penuh" id="tambah-rasa">+ Tambah rasa atau ukuran lain</button>
+        <a class="btn btn-shopee penuh" href="https://shopee.co.id/ibuhj.dianciwidey" target="_blank" rel="noopener">Beli di Shopee</a>
       </div>
+      <p class="catatan">Mau ukuran 500 g, 1 kg, atau bal 2 kg? Ada di toko Shopee kami.</p>
       <p class="catatan">Ongkir dihitung admin sesuai alamatmu. Belum ada yang terkirim sampai kamu menekan kirim di WhatsApp.</p>
     </div>
   </div>
@@ -616,7 +619,7 @@ footer p{margin:0 0 .35em}
 <section class="alasan" aria-labelledby="judul-alasan">
   <div class="wrap">
     <h2 class="judul-pop judul-sec" id="judul-alasan">Kenapa basreng Ambu?</h2>
-    <p class="sub-sec">Tiga alasan yang bikin balik lagi.</p>
+    <p class="sub-sec">Empat alasan yang bikin balik lagi.</p>
     <ul class="stiker">
       <li><img src="img/si-cikur.webp" decoding="async" loading="lazy" alt="" width="200" height="200"><h3>Kencurnya kerasa</h3><p>Wangi cikur (kencur) yang kerasa di setiap keping basreng kriuk.</p></li>
       <li><img src="img/neng-daun.webp" decoding="async" loading="lazy" alt="" width="200" height="200"><h3>Resep rumahan khas Ciwidey</h3><p>Diracik di dapur Ciwidey, Bandung Selatan, dengan resep yang disempurnakan lebih dari 20 tahun.</p></li>
@@ -688,6 +691,7 @@ footer p{margin:0 0 .35em}
     <h2 class="judul-pop" id="judul-penutup">Hayu, ngemil heula!</h2>
     <p>Basreng Ambu tinggal satu ketukan lagi.</p>
     <a class="btn btn-kuning" href="#menu">Pilih rasa sekarang</a>
+    <a class="btn btn-shopee" href="https://shopee.co.id/ibuhj.dianciwidey" target="_blank" rel="noopener">Beli di Shopee</a>
   </div>
 </section>
 </main>
@@ -723,7 +727,7 @@ footer p{margin:0 0 .35em}
 <div class="bar" role="region" aria-label="Ringkasan pesanan">
   <button type="button" class="bar-info" id="bar-info" title="Ubah pesanan">
     <strong id="bar-total">Rp15.000</strong>
-    <span id="bar-ringkas">Pedas Kencur · Stik · 100 g × 1</span>
+    <span id="bar-ringkas">Pedas Daun Jeruk · Stik · 100 g × 1</span>
   </button>
   <a class="btn btn-wa" id="bar-kirim" href="#" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
@@ -775,10 +779,10 @@ var TOKO = {
     var p = pesanWA(), cur = pilihanSekarang();
     $("qty").textContent = qty;
     $("rasa-dipilih").textContent = cur.rasa;
-    $("total").textContent = rupiah(cur.harga * cur.qty);
+    $("total").textContent = rupiah(p.total);
     $("bar-total").textContent = rupiah(p.total);
     $("bar-ringkas").textContent = p.items.length > 1
-      ? p.items.length + " jenis basreng · ketuk untuk ubah"
+      ? p.items.length + " jenis basreng"
       : cur.rasa + " · " + cur.bentuk + " · " + cur.gram + " g × " + cur.qty;
     $("kirim").href = $("bar-kirim").href = waLink(p.teks);
     var ul = $("keranjang"); ul.innerHTML = "";
@@ -803,7 +807,7 @@ var TOKO = {
   $("kurang").onclick = function () { if (qty > 1) qty--; segarkan(); };
   $("tambah-rasa").onclick = function () {
     keranjang.push(pilihanSekarang()); qty = 1; segarkan();
-    $("menu").scrollIntoView(); $("r-kencur").focus({ preventScroll: true });
+    $("menu").scrollIntoView(); $("r-pdj").focus({ preventScroll: true });
   };
   $("bar-info").onclick = function () { $("racik").scrollIntoView(); };
 
