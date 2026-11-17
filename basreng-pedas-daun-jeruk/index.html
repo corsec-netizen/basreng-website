@@ -107,19 +107,13 @@ p{margin:0 0 1em}
 .harga-bintang{position:absolute;z-index:4;left:0;top:-6px;width:104px;height:104px;background:var(--kunyit);color:var(--kecap);display:grid;place-items:center;text-align:center;transform:rotate(-12deg);
   clip-path:polygon(100.0% 50.0%,87.0% 58.5%,95.0% 71.7%,79.7% 73.7%,81.2% 89.1%,66.5% 84.2%,61.1% 98.7%,50.0% 88.0%,38.9% 98.7%,33.5% 84.2%,18.8% 89.1%,20.3% 73.7%,5.0% 71.7%,13.0% 58.5%,0.0% 50.0%,13.0% 41.5%,5.0% 28.3%,20.3% 26.3%,18.8% 10.9%,33.5% 15.8%,38.9% 1.3%,50.0% 12.0%,61.1% 1.3%,66.5% 15.8%,81.2% 10.9%,79.7% 26.3%,95.0% 28.3%,87.0% 41.5%)}
 /* bahan melayang di sekitar kemasan: daun jeruk, irisan cengek, irisan kencur */
-.bahan{position:absolute;z-index:2;pointer-events:none;filter:drop-shadow(2px 3px 0 rgba(74,37,17,.45))}
+.bahan{position:absolute;z-index:2;pointer-events:none}
 .bahan svg{width:100%;height:auto;display:block;overflow:visible}
 .bahan.b-daun1{width:58px;left:30%;top:-14px;transform:rotate(-28deg)}
 .bahan.b-daun2{width:44px;right:3%;top:118px;transform:rotate(28deg) scaleX(-1)}
 .bahan.b-cabai1{width:42px;left:1%;top:118px;transform:rotate(18deg)}
 .bahan.b-cabai2{width:34px;right:4%;top:228px;transform:rotate(-20deg)}
 .bahan.b-kencur{width:42px;left:44%;bottom:-4px;transform:rotate(12deg)}
-@media (prefers-reduced-motion:no-preference){
-  .bahan svg{animation:melayang 3.6s cubic-bezier(.45,0,.55,1) infinite alternate}
-  .bahan.b-daun2 svg{animation-delay:-1.2s}.bahan.b-cabai1 svg{animation-delay:-2.1s}
-  .bahan.b-cabai2 svg{animation-delay:-.6s}.bahan.b-kencur svg{animation-delay:-2.8s}
-}
-@keyframes melayang{from{transform:translateY(0) rotate(0)}to{transform:translateY(-7px) rotate(6deg)}}
 .harga-bintang span{font:600 .8rem/1 var(--display);display:block}
 .harga-bintang strong{font:700 1.45rem/1 var(--display);display:block}
 
@@ -157,7 +151,7 @@ p{margin:0 0 1em}
 .k-pdj label{background:linear-gradient(160deg,#E0261C,#A3120D);--aksen:#4FB35A}
 .k-ori label{background:linear-gradient(160deg,#287A33,#1A5A23);--aksen:#FFE08A}
 .kartu-rasa .karakter::before{content:"";position:absolute;left:-6px;bottom:-8px;width:132px;height:132px;border-radius:50%;background:var(--aksen);border:2.5px solid var(--kecap);opacity:.95}
-.kartu-rasa .bahan-kartu{position:absolute;right:10px;bottom:6px;width:46px;transform:rotate(14deg);filter:drop-shadow(2px 2px 0 rgba(74,37,17,.45))}
+.kartu-rasa .bahan-kartu{position:absolute;right:10px;bottom:6px;width:46px;transform:rotate(14deg)}
 .kartu-rasa .bahan-kartu svg{width:100%;height:auto;display:block}
 .kartu-rasa .karakter{height:120px;position:relative;margin-bottom:6px}
 .kartu-rasa .karakter img{position:absolute;height:120px;width:auto;bottom:0}
@@ -343,6 +337,7 @@ footer p{margin:0 0 .35em}
 
 /* ---------- Halaman artikel ---------- */
 .atas-hal{background:var(--cabai);padding:14px 0;color:#fff}
+.atas-hal .logo-teks small{color:#fff}
 .atas-hal .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .remah{font-size:.85rem;margin:18px 0 6px}
 .remah a{color:var(--cabai-tua);font-weight:700}
